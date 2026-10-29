@@ -4,9 +4,9 @@
 **Ubicación:** D:\pruebadomo  
 **Framework:** Next.js 16 (App Router, TypeScript, Tailwind CSS)  
 **Base de datos / Auth:** Supabase (PostgreSQL + Supabase Auth)  
-**Despliegue:** Vercel (pendiente)  
-**Repositorio:** GitHub (pendiente)  
-**Estado:** Desarrollo — Paso 1 y Paso 2 (Login/Registro) completados  
+**Despliegue:** Vercel (pendiente — listo para conectar)  
+**Repositorio:** GitHub — https://github.com/kimboneri/domoprueba.git (subido)  
+**Estado:** Desarrollo — Paso 1 y Paso 2 (Login/Registro) completados, código en GitHub  
 **Última actualización:** 28/10/2026
 
 ---
@@ -259,16 +259,24 @@ D:\pruebadomo\
 | 28/10/2026 | Refactorización: clientes lazy para evitar errores de build | Asistente | Completado |
 | 28/10/2026 | `npm run lint`: sin errores | Asistente | Completado |
 | 28/10/2026 | `npm run build`: compilación exitosa | Asistente | Completado |
-| — | Configuración de variables de entorno (placeholders) | Pendiente credenciales reales del usuario | Pendiente |
-| — | Inicializar git, conectar GitHub, desplegar en Vercel | Pendiente aprobación del usuario | Pendiente |
+| 28/10/2026 | Credenciales de Supabase configuradas en `.env.local` (no se suben a Git por `.gitignore`) | Asistente | Completado |
+| 28/10/2026 | Commit y push a GitHub (https://github.com/kimboneri/domoprueba.git) | Asistente | Completado |
+| — | Desplegar en Vercel | Pendiente aprobación del usuario | Pendiente |
 
 ---
 
 ## 7. PRÓXIMOS PASOS (PENDIENTE DE APROBACIÓN DEL USUARIO)
 
-1. **Credenciales de Supabase:** El usuario debe proporcionar `NEXT_PUBLIC_SUPABASE_URL` y `NEXT_PUBLIC_SUPABASE_ANON_KEY` reales para reemplazar los placeholders en `.env.local`.
-2. **Configurar callback en Supabase:** Añadir `https://tu-dominio.vercel.app/auth/callback` en Authentication > URL Configuration.
-3. **Confirmar commit y push a GitHub:** Proporcionar URL del repositorio GitHub.
-4. **Desplegar en Vercel:** Conectar el repositorio a Vercel y agregar las variables de entorno.
+1. **Desplegar en Vercel:**
+   - Ve a https://vercel.com e inicia sesión.
+   - Conecta tu repositorio GitHub: https://github.com/kimboneri/domoprueba.git
+   - Importa el proyecto `pruebadomo`.
+   - En "Environment Variables", añade:
+     - `NEXT_PUBLIC_SUPABASE_URL` = `https://bbnjdyoqnbjoifosqhjj.supabase.co`
+     - `NEXT_PUBLIC_SUPABASE_ANON_KEY` = (la clave anónima que te proporcionaste)
+   - Despliega.
+2. **Configurar callback en Supabase:**
+   - En Supabase, ve a Authentication > URL Configuration.
+   - Añade la URL de tu despliegue en Vercel + `/auth/callback` (ej: `https://tu-app.vercel.app/auth/callback`) en "Redirect URLs".
 
 **Este archivo se actualizará en cada modificación del proyecto.** No se hará commit ni despliegue sin la autorización explícita del usuario.
